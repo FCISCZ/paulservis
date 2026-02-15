@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paulservis s.r.o. – NONSTOP elektroservis</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #1a1a2e; line-height: 1.6; }
+
+/* NAV */
+nav { background: #1a1a2e; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+nav .logo { color: #f59e0b; font-weight: 700; font-size: 1.2em; }
+nav .tel { color: #fff; text-decoration: none; font-weight: 600; }
+nav .tel:hover { color: #f59e0b; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul a { color: #ccc; text-decoration: none; font-size: 0.9em; }
+nav ul a:hover { color: #f59e0b; }
+@media (max-width: 700px) { nav ul { display: none; } }
+
+/* HERO */
+.hero { background: #1a1a2e; color: #fff; padding: 60px 20px; text-align: center; }
+.hero h1 { font-size: 2.2em; margin-bottom: 8px; }
+.hero h1 span { color: #f59e0b; }
+.hero p { color: #94a3b8; font-size: 1.1em; max-width: 600px; margin: 0 auto 20px; }
+.hero .nonstop { display: inline-block; background: #f59e0b; color: #1a1a2e; padding: 10px 30px; border-radius: 6px; font-weight: 700; font-size: 1.1em; text-decoration: none; }
+.hero .nonstop:hover { background: #d97706; }
+
+/* SEKCE */
+.section { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+.section-title { font-size: 1.5em; color: #1a1a2e; margin-bottom: 30px; text-align: center; border-bottom: 3px solid #f59e0b; display: inline-block; padding-bottom: 4px; }
+.section-center { text-align: center; }
+
+/* SLUŽBY */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 700px) { .services { grid-template-columns: 1fr; } }
+.service { background: #f8fafc; border-radius: 10px; padding: 25px; text-align: center; border: 1px solid #e2e8f0; transition: border-color 0.3s; }
+.service:hover { border-color: #f59e0b; }
+.service .icon { font-size: 2em; margin-bottom: 10px; }
+.service h3 { font-size: 1em; color: #1a1a2e; margin-bottom: 8px; }
+.service p { font-size: 0.85em; color: #64748b; }
+
+/* O NÁS */
+.about { background: #f8fafc; }
+.about-content { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+.badges { display: flex; gap: 20px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
+.badge { background: #1a1a2e; color: #f59e0b; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 0.9em; text-align: center; }
+
+/* KONTAKT */
+.contact { background: #1a1a2e; color: #fff; padding: 50px 20px; }
+.contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 700px) { .contact-inner { grid-template-columns: 1fr; } }
+.contact h2 { color: #f59e0b; margin-bottom: 20px; font-size: 1.5em; }
+.contact p { margin-bottom: 8px; color: #cbd5e1; }
+.contact a { color: #f59e0b; text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+.contact strong { color: #fff; }
+
+footer { background: #111; text-align: center; padding: 20px; color: #64748b; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<nav>
+    <span class="logo">PAULSERVIS</span>
+    <ul>
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#onas">O nás</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="tel:+420773333004" class="tel">+420 773 333 004</a>
+</nav>
+
+<div class="hero">
+    <h1>NONSTOP <span>elektroservis</span></h1>
+    <p>Elektroinstalace, kamerové systémy, fotovoltaika a chytrá domácnost na severu Čech</p>
+    <a href="tel:+420773333004" class="nonstop">24/7 VOLEJTE +420 773 333 004</a>
+</div>
+
+<div class="section" id="sluzby">
+    <div class="section-center"><span class="section-title">Služby</span></div>
+    <br><br>
+    <div class="services">
+        <div class="service">
+            <div class="icon">⚡</div>
+            <h3>Elektroinstalace</h3>
+            <p>Montáže, revize a opravy elektroinstalací</p>
+        </div>
+        <div class="service">
+            <div class="icon">📹</div>
+            <h3>Kamerové systémy</h3>
+            <p>Montáž a servis kamerových systémů</p>
+        </div>
+        <div class="service">
+            <div class="icon">📊</div>
+            <h3>Měření</h3>
+            <p>Specializovaná elektrotechnická měření</p>
+        </div>
+        <div class="service">
+            <div class="icon">🏠</div>
+            <h3>Chytrá domácnost</h3>
+            <p>Řešení pro moderní chytrou domácnost</p>
+        </div>
+        <div class="service">
+            <div class="icon">☀️</div>
+            <h3>Fotovoltaika</h3>
+            <p>Fotovoltaické systémy a elektrárny</p>
+        </div>
+        <div class="service">
+            <div class="icon">🔧</div>
+            <h3>Nonstop servis</h3>
+            <p>Poruchy a havárie 24 hodin denně, 7 dní v týdnu</p>
+        </div>
+    </div>
+</div>
+
+<div class="about" id="onas">
+    <div class="about-content">
+        <div class="section-center"><span class="section-title">O nás</span></div>
+        <br>
+        <p>Firma Paulservis s.r.o. byla založena v roce 2014. Provádíme NONSTOP elektroservis na severu Čech. Klademe důraz na rychlé vyřízení, spolehlivost a zkušenosti.</p>
+        <div class="badges">
+            <div class="badge">24/7 NONSTOP</div>
+            <div class="badge">od roku 2014</div>
+            <div class="badge">sever Čech</div>
+        </div>
+    </div>
+</div>
+
+<div class="contact" id="kontakt">
+    <div class="contact-inner">
+        <div>
+            <h2>Kontakt</h2>
+            <p><strong>Paulservis s.r.o.</strong></p>
+            <p>V Aleji 47, Chabařovice 403 17</p>
+            <p>IČO: 03436152 | DIČ: CZ03436152</p>
+        </div>
+        <div>
+            <h2>Spojení</h2>
+            <p>Tel: <a href="tel:+420773333004">+420 773 333 004</a></p>
+            <p>E-mail: <a href="mailto:info@paulservis.cz">info@paulservis.cz</a></p>
+        </div>
+    </div>
+</div>
+
+<footer>&copy; 2014–2026 Paulservis s.r.o.</footer>
+
+</body>
+</html>
