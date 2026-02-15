@@ -10,16 +10,16 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #1a1a2e; line-height:
 
 /* NAV */
 nav { background: #1a1a2e; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-nav .logo { color: #f59e0b; font-weight: 700; font-size: 1.2em; }
-nav .tel { color: #fff; text-decoration: none; font-weight: 600; }
-nav .tel:hover { color: #f59e0b; }
 nav ul { list-style: none; display: flex; gap: 20px; }
 nav ul a { color: #ccc; text-decoration: none; font-size: 0.9em; }
 nav ul a:hover { color: #f59e0b; }
+nav .tel { color: #fff; text-decoration: none; font-weight: 600; }
+nav .tel:hover { color: #f59e0b; }
 @media (max-width: 700px) { nav ul { display: none; } }
 
 /* HERO */
-.hero { background: #1a1a2e; color: #fff; padding: 60px 20px; text-align: center; }
+.hero { background: #1a1a2e; color: #fff; padding: 50px 20px 60px; text-align: center; }
+.hero .logo { font-size: 2.2em; font-weight: 700; color: #f59e0b; letter-spacing: 3px; margin-bottom: 6px; }
 .hero h1 { font-size: 2.2em; margin-bottom: 8px; }
 .hero h1 span { color: #f59e0b; }
 .hero p { color: #94a3b8; font-size: 1.1em; max-width: 600px; margin: 0 auto 20px; }
@@ -34,11 +34,18 @@ nav ul a:hover { color: #f59e0b; }
 /* SLUŽBY */
 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 700px) { .services { grid-template-columns: 1fr; } }
-.service { background: #f8fafc; border-radius: 10px; padding: 25px; text-align: center; border: 1px solid #e2e8f0; transition: border-color 0.3s; }
+.service { background: #f8fafc; border-radius: 10px; padding: 25px; text-align: center; border: 1px solid #e2e8f0; cursor: pointer; transition: border-color 0.3s; }
 .service:hover { border-color: #f59e0b; }
 .service .icon { font-size: 2em; margin-bottom: 10px; }
 .service h3 { font-size: 1em; color: #1a1a2e; margin-bottom: 8px; }
-.service p { font-size: 0.85em; color: #64748b; }
+.service .short { font-size: 0.85em; color: #64748b; }
+.service .expand-hint { font-size: 0.75em; color: #f59e0b; margin-top: 10px; font-weight: 600; }
+.service .detail { display: none; text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; font-size: 0.85em; color: #475569; line-height: 1.7; }
+.service .detail ul { margin: 8px 0 0 18px; }
+.service .detail ul li { margin-bottom: 4px; }
+.service.open { border-color: #f59e0b; background: #fffbeb; }
+.service.open .detail { display: block; }
+.service.open .expand-hint { display: none; }
 
 /* O NÁS */
 .about { background: #f8fafc; }
@@ -62,7 +69,6 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
 <body>
 
 <nav>
-    <span class="logo">PAULSERVIS</span>
     <ul>
         <li><a href="#sluzby">Služby</a></li>
         <li><a href="#onas">O nás</a></li>
@@ -72,6 +78,7 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
 </nav>
 
 <div class="hero">
+    <div class="logo">PAULSERVIS</div>
     <h1>NONSTOP <span>elektroservis</span></h1>
     <p>Elektroinstalace, kamerové systémy, fotovoltaika a chytrá domácnost na severu Čech</p>
     <a href="tel:+420773333004" class="nonstop">24/7 VOLEJTE +420 773 333 004</a>
@@ -81,36 +88,110 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
     <div class="section-center"><span class="section-title">Služby</span></div>
     <br><br>
     <div class="services">
-        <div class="service">
+
+        <div class="service" onclick="this.classList.toggle('open')">
             <div class="icon">⚡</div>
-            <h3>Elektroinstalace</h3>
-            <p>Montáže, revize a opravy elektroinstalací</p>
+            <h3>Elektroinstalace a revize</h3>
+            <p class="short">Montáže, revize a opravy elektroinstalací</p>
+            <div class="expand-hint">▼ více info</div>
+            <div class="detail">
+                <p>Provádíme kompletní elektroinstalační práce od návrhu po realizaci. Náš technik je držitelem oprávnění revizního technika dle zákona č. 250/2021 Sb. o bezpečnosti práce s vyhrazenými technickými zařízeními.</p>
+                <ul>
+                    <li>Montáže a rekonstrukce elektroinstalací</li>
+                    <li>Výchozí a periodické revize elektrických zařízení</li>
+                    <li>Revize hromosvodů a přepěťových ochran</li>
+                    <li>Odstraňování závad zjištěných při revizích</li>
+                    <li>Poradenství v oblasti elektrotechnických norem</li>
+                </ul>
+            </div>
         </div>
-        <div class="service">
+
+        <div class="service" onclick="this.classList.toggle('open')">
             <div class="icon">📹</div>
             <h3>Kamerové systémy</h3>
-            <p>Montáž a servis kamerových systémů</p>
+            <p class="short">Návrh, montáž a servis kamerových systémů</p>
+            <div class="expand-hint">▼ více info</div>
+            <div class="detail">
+                <p>Navrhujeme a instalujeme profesionální kamerové systémy pro firmy, obce i soukromé objekty. Používáme primárně technologii Uniview — špičkového světového výrobce s certifikací ONVIF a pokročilými funkcemi jako LightHunter pro noční vidění.</p>
+                <ul>
+                    <li>IP kamerové systémy s vysokým rozlišením</li>
+                    <li>Řešení pro městské a obecní kamerové systémy</li>
+                    <li>Splnění legislativních požadavků (GDPR, zákon o obecní policii)</li>
+                    <li>Vzdálený přístup a monitoring přes mobilní aplikace</li>
+                    <li>Servis a údržba stávajících instalací</li>
+                </ul>
+                <p style="margin-top:8px;">Těšíme se důvěře měst a obcí v oblasti zabezpečovacích systémů.</p>
+            </div>
         </div>
-        <div class="service">
+
+        <div class="service" onclick="this.classList.toggle('open')">
             <div class="icon">📊</div>
             <h3>Měření</h3>
-            <p>Specializovaná elektrotechnická měření</p>
+            <p class="short">Specializovaná elektrotechnická měření</p>
+            <div class="expand-hint">▼ více info</div>
+            <div class="detail">
+                <p>Provádíme odborná elektrotechnická měření s využitím kalibrovaných přístrojů a v souladu s platnými ČSN normami.</p>
+                <ul>
+                    <li>Měření izolačního odporu</li>
+                    <li>Měření impedance smyčky</li>
+                    <li>Ověření funkce proudových chráničů (RCD)</li>
+                    <li>Měření přechodových odporů</li>
+                    <li>Protokoly o měření pro revizní zprávy</li>
+                </ul>
+            </div>
         </div>
-        <div class="service">
+
+        <div class="service" onclick="this.classList.toggle('open')">
             <div class="icon">🏠</div>
             <h3>Chytrá domácnost</h3>
-            <p>Řešení pro moderní chytrou domácnost</p>
+            <p class="short">Řešení pro moderní chytrou domácnost</p>
+            <div class="expand-hint">▼ více info</div>
+            <div class="detail">
+                <p>Navrhneme a zrealizujeme systém chytré domácnosti podle vašich představ — od jednoduchého ovládání osvětlení až po komplexní automatizaci celého domu.</p>
+                <ul>
+                    <li>Chytré osvětlení a stmívání</li>
+                    <li>Ovládání vytápění a klimatizace</li>
+                    <li>Zabezpečovací a přístupové systémy</li>
+                    <li>Centrální ovládání přes telefon nebo tablet</li>
+                    <li>Integrace s fotovoltaikou a úložišti energie</li>
+                </ul>
+            </div>
         </div>
-        <div class="service">
+
+        <div class="service" onclick="this.classList.toggle('open')">
             <div class="icon">☀️</div>
             <h3>Fotovoltaika</h3>
-            <p>Fotovoltaické systémy a elektrárny</p>
+            <p class="short">Fotovoltaické systémy a elektrárny</p>
+            <div class="expand-hint">▼ více info</div>
+            <div class="detail">
+                <p>Projektujeme a instalujeme fotovoltaické elektrárny pro rodinné domy i komerční objekty. Náš technik absolvoval odborné vzdělávání v oboru fotovoltaických systémů na vysokoškolské úrovni (ČVUT), což garantuje kvalitní návrh a bezpečnou realizaci.</p>
+                <ul>
+                    <li>Návrh a dimenzování FVE na míru</li>
+                    <li>Montáž panelů, střídačů a bateriových úložišť</li>
+                    <li>Připojení do distribuční sítě a vyřízení dokumentace</li>
+                    <li>Optimalizace vlastní spotřeby a návratnosti</li>
+                    <li>Servis, monitoring a údržba fotovoltaických systémů</li>
+                </ul>
+            </div>
         </div>
-        <div class="service">
+
+        <div class="service" onclick="this.classList.toggle('open')">
             <div class="icon">🔧</div>
             <h3>Nonstop servis</h3>
-            <p>Poruchy a havárie 24 hodin denně, 7 dní v týdnu</p>
+            <p class="short">Poruchy a havárie 24/7</p>
+            <div class="expand-hint">▼ více info</div>
+            <div class="detail">
+                <p>Elektřina nečeká — a my taky ne. Jsme dostupní 24 hodin denně, 7 dní v týdnu pro řešení poruch a havarijních stavů na severu Čech.</p>
+                <ul>
+                    <li>Nonstop havarijní služba</li>
+                    <li>Diagnostika a oprava elektrických poruch</li>
+                    <li>Výjezd v co nejkratším čase</li>
+                    <li>Noční a víkendové zásahy</li>
+                    <li>Zajištění provizorního napájení</li>
+                </ul>
+            </div>
         </div>
+
     </div>
 </div>
 
@@ -118,11 +199,12 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
     <div class="about-content">
         <div class="section-center"><span class="section-title">O nás</span></div>
         <br>
-        <p>Firma Paulservis s.r.o. byla založena v roce 2014. Provádíme NONSTOP elektroservis na severu Čech. Klademe důraz na rychlé vyřízení, spolehlivost a zkušenosti.</p>
+        <p>Firma Paulservis s.r.o. byla založena v roce 2014. Provádíme NONSTOP elektroservis na severu Čech. Náš revizní technik je oprávněn provádět revize vyhrazených elektrických zařízení dle platné legislativy. Klademe důraz na rychlé vyřízení, spolehlivost a odbornost podloženou praxí i vzděláním.</p>
         <div class="badges">
             <div class="badge">24/7 NONSTOP</div>
             <div class="badge">od roku 2014</div>
             <div class="badge">sever Čech</div>
+            <div class="badge">revizní technik</div>
         </div>
     </div>
 </div>
