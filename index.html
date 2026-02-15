@@ -47,6 +47,17 @@ nav .tel:hover { color: #f59e0b; }
 .service.open .detail { display: block; }
 .service.open .expand-hint { display: none; }
 
+/* REFERENCE */
+.ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 700px) { .ref-grid { grid-template-columns: 1fr; } }
+.ref-card { background: #f8fafc; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; transition: border-color 0.3s; }
+.ref-card:hover { border-color: #f59e0b; }
+.ref-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.ref-card .ref-body { padding: 18px; }
+.ref-card h3 { font-size: 1em; color: #1a1a2e; margin-bottom: 4px; }
+.ref-card .ref-loc { font-size: 0.8em; color: #f59e0b; font-weight: 600; margin-bottom: 8px; }
+.ref-card p { font-size: 0.85em; color: #64748b; }
+
 /* O NÁS */
 .about { background: #f8fafc; }
 .about-content { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
@@ -80,6 +91,7 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
     <ul>
         <li><a href="#sluzby">Služby</a></li>
         <li><a href="#onas">O nás</a></li>
+        <li><a href="#reference">Reference</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <a href="tel:+420773333004" class="tel">+420 773 333 004</a>
@@ -213,6 +225,42 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
             <div class="badge">od roku 2014</div>
             <div class="badge">sever Čech</div>
             <div class="badge">revizní technik</div>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="reference">
+    <div class="section-center"><span class="section-title">Reference</span></div>
+    <br><br>
+    <div class="ref-grid">
+        <div class="ref-card">
+            <img src="img/ref/srdcovka.jpg" alt="Restaurace Srdcovka">
+            <div class="ref-body">
+                <h3>Restaurace Srdcovka</h3>
+                <div class="ref-loc">Ústí nad Labem</div>
+                <p>Kompletní elektroinstalace včetně smart ovládání a audio systému</p>
+            </div>
+        </div>
+        <div class="ref-card">
+            <div class="ref-body">
+                <h3>Kamerový systém</h3>
+                <div class="ref-loc">Ústí nad Labem</div>
+                <p>Instalace městského kamerového systému Uniview</p>
+            </div>
+        </div>
+        <div class="ref-card">
+            <div class="ref-body">
+                <h3>Elektroinstalace</h3>
+                <div class="ref-loc">Chabařovice</div>
+                <p>Kompletní elektroinstalační práce a revize</p>
+            </div>
+        </div>
+        <div class="ref-card">
+            <div class="ref-body">
+                <h3>Elektroinstalace</h3>
+                <div class="ref-loc">Přestanov</div>
+                <p>Realizace elektroinstalace a měření</p>
+            </div>
         </div>
     </div>
 </div>
