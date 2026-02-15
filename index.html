@@ -64,10 +64,12 @@ nav .tel:hover { color: #f59e0b; }
 .contact strong { color: #fff; }
 .contact .reg { font-size: 0.8em; color: #94a3b8; margin-top: 12px; line-height: 1.5; }
 .team { display: grid; grid-template-columns: 1fr; gap: 16px; }
-.person { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; border-left: 3px solid #f59e0b; }
+.person { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; border-left: 3px solid #f59e0b; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.person .text { flex: 1; }
 .person .name { color: #fff; font-weight: 700; font-size: 1em; }
 .person .role { color: #f59e0b; font-size: 0.85em; margin-bottom: 6px; }
 .person .info { font-size: 0.85em; color: #cbd5e1; }
+.person .qr { width: 70px; height: 70px; border-radius: 6px; flex-shrink: 0; }
 
 footer { background: #111; text-align: center; padding: 20px; color: #64748b; font-size: 0.8em; }
 </style>
@@ -230,28 +232,36 @@ footer { background: #111; text-align: center; padding: 20px; color: #64748b; fo
             <h2>Tým</h2>
             <div class="team">
                 <div class="person">
-                    <div class="name">Pavel Schilha</div>
-                    <div class="role">Jednatel</div>
-                    <div class="info">
-                        <a href="tel:+420773333004">+420 773 333 004</a><br>
-                        <a href="mailto:schilha@paulservis.cz">schilha@paulservis.cz</a>
+                    <div class="text">
+                        <div class="name">Pavel Schilha</div>
+                        <div class="role">Jednatel</div>
+                        <div class="info">
+                            <a href="tel:+420773333004">+420 773 333 004</a><br>
+                            <a href="mailto:schilha@paulservis.cz">schilha@paulservis.cz</a>
+                        </div>
                     </div>
                 </div>
                 <div class="person">
-                    <div class="name">Milan Řeháček</div>
-                    <div class="role">Vedoucí technik</div>
-                    <div class="info">
-                        <a href="tel:+420777910696">+420 777 910 696</a><br>
-                        <a href="mailto:technik@paulservis.cz">technik@paulservis.cz</a>
+                    <div class="text">
+                        <div class="name">Milan Řeháček</div>
+                        <div class="role">Vedoucí technik</div>
+                        <div class="info">
+                            <a href="tel:+420777910696">+420 777 910 696</a><br>
+                            <a href="mailto:technik@paulservis.cz">technik@paulservis.cz</a>
+                        </div>
                     </div>
+                    <img src="img/milan_qr.png" alt="QR vizitka Milan Řeháček" class="qr">
                 </div>
                 <div class="person">
-                    <div class="name">Jiří Netrh</div>
-                    <div class="role">Technik — elektro, zvonky, EZS</div>
-                    <div class="info">
-                        <a href="tel:+420777766866">+420 777 766 866</a><br>
-                        <a href="mailto:netrh@paulservis.cz">netrh@paulservis.cz</a>
+                    <div class="text">
+                        <div class="name">Jiří Netrh</div>
+                        <div class="role">Technik — elektro, zvonky, EZS</div>
+                        <div class="info">
+                            <a href="tel:+420777766866">+420 777 766 866</a><br>
+                            <a href="mailto:netrh@paulservis.cz">netrh@paulservis.cz</a>
+                        </div>
                     </div>
+                    <img src="img/jiri_qr.png" alt="QR vizitka Jiří Netrh" class="qr">
                 </div>
             </div>
         </div>
